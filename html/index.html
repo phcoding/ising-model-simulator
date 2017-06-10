@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <title>Ising Model Simulator</title>
+    <link rel="stylesheet" type="text/css" href="./engine/css/engine.css">
+    <link rel="stylesheet" type="text/css" href="./css/ising.css">
+    <script type="text/javascript" src="./engine/js/engine.js"></script>
+    <script type="text/javascript" src="./js/ising.js"></script>
+</head>
+<body>
+    <div class="panel-display">
+        <canvas id="canvas"></canvas>
+        <div id="chart"></div>
+    </div>
+    <div class="panel-contral">
+        <!--  -->
+        <div class="contral-preheat">
+            <input type="submit" class="contral-button" id="start" value="Start">
+            <input type="submit" class="contral-button" id="reset" value="Reset">
+
+            <!--  -->
+            <div class="contral-range" id="crl">
+                <div class="contral-range-label">
+                    <span class="label-text" title="Length of spin net.">L:</span>
+                    <input type="number" class="label-value" id="lvalue" value="0" max="500" min="64" step="1" title="'Enter' to set value !">
+                </div>
+                <input type="range" class="contral-range-slide" id="lrange" min="64" max="500" value="500">
+            </div>
+
+            <div class="contral-range" id="crh">
+                <div class="contral-range-label">
+                    <span class="label-text" title="External magnetic field.">H:</span>
+                    <input type="number" class="label-value" id="hvalue" value="0" max="1" min="-1" step="0.01" title="'Enter' to set value !">
+                </div>
+                <input type="range" class="contral-range-slide" id="hrange" min="-100" max="100" value="0">
+            </div>
+
+            <div class="contral-range" id="crt">
+                <div class="contral-range-label">
+                    <span class="label-text" title="Temperature of system.">T:</span>
+                    <input type="number" class="label-value" id="tvalue" value="0" max="500" min="0" step="0.01" title="'Enter' to set value !">
+                </div>
+                <input type="range" class="contral-range-slide" id="trange" min="0" max="500" value="227">
+            </div>
+        </div>
+
+        <!--  -->
+        <div class="contral-analyze">
+            <input type="submit" class="contral-button" id="sample" value="Sample">
+        </div>
+    </div>
+</body>
+</html>
