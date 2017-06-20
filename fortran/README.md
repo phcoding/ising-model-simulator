@@ -6,7 +6,7 @@
 > `util.f90`:       util module with some useful function.<br>
 > `build.cmd`:      cmd file on windows for building `ising_main.f90`.<br>
 > `ising_plot.py`:  code to show spin site state based on python.<br>
-> `runtime.f90`:    a simple util to execute command and get running time.<\br>
+> `runtime.f90`:    a simple util to execute command and get running time.<br>
 
 ### Usage and demo
 1. compile `ising_main.90`
