@@ -25,6 +25,8 @@ def main():
                 except:
                     print('Error: img save error !')
             plb.show()
+        else:
+            print('Error: no such spin file.')
 
 if __name__ == '__main__':
     main()
