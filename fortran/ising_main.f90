@@ -2,9 +2,9 @@ program main
     ! 
     ! ising module 2d simulation main function.
     ! 
-    ! Usage: `ising [size] [temp] [magn] [steps] [times] [outfile]`
+    ! Usage: `ising [side] [temp] [magn] [steps] [times] [outfile]`
     ! Params:
-    !   --[size]     lattic side length.
+    !   --[side]     lattic side length.
     !   --[temp]     temperature of system.
     !   --[magn]     magnet filed of system.
     !   --[steps]    steps of sampling in Monte Carlo.
@@ -40,7 +40,7 @@ program main
     type(spins) :: spin
     real :: temp, magn
     character(len=32) :: arg
-    integer :: size, steps, times, i, narg
+    integer :: side, steps, times, i, narg
 
     narg = iargc()
 
@@ -56,7 +56,7 @@ program main
         call getarg(i,arg)
         select case(i)
         case(1)
-            read(arg, *) size
+            read(arg, *) side
         case(2)
             read(arg, *) temp
         case(3)
@@ -69,7 +69,7 @@ program main
     end do
 
     ! init spin site data.
-    call init_spins(spin, size, temp, magn)
+    call init_spins(spin, side, temp, magn)
 
     ! start simulating.
     call ising_simulate(spin, steps,times)
@@ -91,9 +91,9 @@ subroutine show_usage()
     ! show help message of this pogram.
     !
     implicit none
-    write(*,"(A,/)") 'Usage: ising.exe [size] [temp] [magn] [steps] [times] [outfile]'
+    write(*,"(A,/)") 'Usage: ising.exe [side] [temp] [magn] [steps] [times] [outfile]'
     write(*,"(A,/)") 'Params:'
-    write(*,"(T4,A,/)") "--[size]     lattic side length."
+    write(*,"(T4,A,/)") "--[side]     lattic side length."
     write(*,"(T4,A,/)") "--[temp]     temperature of system."
     write(*,"(T4,A,/)") "--[magn]     magnet filed of system."
     write(*,"(T4,A,/)") "--[steps]    steps of sampling in Monte Carlo."

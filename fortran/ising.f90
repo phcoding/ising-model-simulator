@@ -29,19 +29,19 @@ contains
         deallocate(seed)
     end subroutine init_random_seed
 
-    subroutine init_spins(spin, size, temp, magn)
+    subroutine init_spins(spin, side, temp, magn)
         ! 
         ! Init spins according to given spin and other pramaters.
         ! 
         !   spin    [type(spins)]     spin data storage of ising system.
-        !   size    [integer]         2d square ising system side.
+        !   side    [integer]         2d square ising system side.
         !   temp    [real]            temperature of ising system.
         !   magn    [real]            magnet filed of ising system.
         !   
         implicit none
         type(spins) :: spin
-        integer :: i, j, size
-        real :: temp, magn, data(size, size)
+        integer :: i, j, side
+        real :: temp, magn, data(side, side)
         call init_random_seed()
         call random_number(data)
         where(data<0.5)
@@ -49,7 +49,7 @@ contains
         elsewhere
             data = 1
         end where
-        allocate(spin%data(size, size))
+        allocate(spin%data(side, side))
         spin%data = int(data, 1)
         spin%temp = temp
         spin%magn = magn
