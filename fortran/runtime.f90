@@ -16,7 +16,7 @@ program main
     do i = 1, narg
         call getarg(i,args(i))
     end do
-    write(cmd_line,"(TR1,32A8)") args(1:narg)
+    write(cmd_line,"(TR1,32A)") args(1:narg)
     call system_clock(time(0))
     call system(cmd_line)
     call system_clock(time(1))
