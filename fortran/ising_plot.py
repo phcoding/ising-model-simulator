@@ -24,7 +24,8 @@ def main():
                     plb.imsave(img_path, spin)
                 except:
                     print('Error: img save error !')
-            plb.show()
+            else:
+                plb.show()
         else:
             print('Error: no such spin file.')
 
