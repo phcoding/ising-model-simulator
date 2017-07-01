@@ -18,8 +18,8 @@
 > ![demo_cmd](./img/demo_cmd.png)
 
 3. plot simulation result of spin site.
-> usage: `python3 [spin site file]`<br>
-> example:  `python3 spin.csv`<br>
+> usage: `python3 ising_plot.py [spin site file]`<br>
+> example:  `python3 ising_plot.py spin.csv`<br>
 > ![demo_spin](./img/demo_spin.png)
 
 4. usage of runtime
