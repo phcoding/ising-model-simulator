@@ -112,12 +112,12 @@ contains
                 if(r>s(1)-1) then
                     s_b = spin%data(1, c)
                 else
-                    s_b = spin%data(r, c)
+                    s_b = spin%data(r+1, c)
                 end if
                 if(c>s(2)-1) then
                     s_r = spin%data(r, 1)
                 else
-                    s_r = spin%data(r, c)
+                    s_r = spin%data(r, c+1)
                 end if
                 total_energy = total_energy - spin%data(r, c)*(s_r+s_b+spin%magn)
             end do
